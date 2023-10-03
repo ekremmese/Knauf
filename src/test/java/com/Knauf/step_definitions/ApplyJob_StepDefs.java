@@ -73,9 +73,9 @@ public class ApplyJob_StepDefs {
     @When("user clicks one of the job openings on the list")
     public void user_clicks_one_of_the_job_openings_on_the_list() {
         //Write code here that turns the phrase above into concrete actions
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOf(itDepartmentJobsPage.listOfJobs.get(0)));
-        //BrowserUtilities.sleep(30);
+        //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(30));
+        //wait.until(ExpectedConditions.visibilityOf(itDepartmentJobsPage.listOfJobs.get(0)));
+        BrowserUtilities.sleep(30);
         System.out.println(itDepartmentJobsPage.listOfJobs.size());
         itDepartmentJobsPage.listOfJobs.get(0).click();
 
