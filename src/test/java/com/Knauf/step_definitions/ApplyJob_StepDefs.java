@@ -1,14 +1,18 @@
 package com.Knauf.step_definitions;
 
-import com.Knauf.pages.CareersMainPage;
-import com.Knauf.pages.JobSearchPage;
-import com.Knauf.pages.MainPage;
+import com.Knauf.pages.*;
 import com.Knauf.utilitites.BrowserUtilities;
 import com.Knauf.utilitites.ConfigurationReader;
 import com.Knauf.utilitites.Driver;
 import io.cucumber.java.en.*;
+import org.junit.Assert;
+import org.junit.rules.ExpectedException;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.Set;
 
 public class ApplyJob_StepDefs {
@@ -18,6 +22,8 @@ public class ApplyJob_StepDefs {
     MainPage mainPage = new MainPage();
     CareersMainPage careersMainPage = new CareersMainPage();
     JobSearchPage jobSearchPage = new JobSearchPage();
+    ITDepartmentJobsPage itDepartmentJobsPage = new ITDepartmentJobsPage();
+    JobDescriptionPage jobDescriptionPage = new JobDescriptionPage();
 
     @Given("user is on Knauf English page")
     public void user_is_on_knauf_english_page() {
@@ -69,11 +75,18 @@ public class ApplyJob_StepDefs {
     @When("user clicks one of the job openings on the list")
     public void user_clicks_one_of_the_job_openings_on_the_list() {
         // Write code here that turns the phrase above into concrete actions
-        
+        //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        //wait.until(ExpectedConditions.visibilityOf(itDepartmentJobsPage.listOfJobs.get(0)));
+        BrowserUtilities.sleep(30);
+        System.out.println(itDepartmentJobsPage.listOfJobs.size());
+        itDepartmentJobsPage.listOfJobs.get(0).click();
+
     }
     @Then("user should be able to apply the job")
     public void user_should_be_able_to_apply_the_job() {
         // Write code here that turns the phrase above into concrete actions
+        jobDescriptionPage.acceptAllCookies.click();
+        Assert.assertTrue(jobDescriptionPage.applyJobButton.isEnabled());
         
     }
 
