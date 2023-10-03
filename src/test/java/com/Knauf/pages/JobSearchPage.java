@@ -1,7 +1,6 @@
 package com.Knauf.pages;
 
-import com.Knauf.utilitites.Driver;
-import com.google.j2objc.annotations.Weak;
+import com.Knauf.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;

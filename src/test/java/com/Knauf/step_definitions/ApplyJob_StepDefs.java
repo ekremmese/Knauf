@@ -1,14 +1,12 @@
 package com.Knauf.step_definitions;
 
 import com.Knauf.pages.*;
-import com.Knauf.utilitites.BrowserUtilities;
-import com.Knauf.utilitites.ConfigurationReader;
-import com.Knauf.utilitites.Driver;
+import com.Knauf.utilities.BrowserUtilities;
+import com.Knauf.utilities.ConfigurationReader;
+import com.Knauf.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
-import org.junit.rules.ExpectedException;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -74,10 +72,10 @@ public class ApplyJob_StepDefs {
     }
     @When("user clicks one of the job openings on the list")
     public void user_clicks_one_of_the_job_openings_on_the_list() {
-        // Write code here that turns the phrase above into concrete actions
-        //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-        //wait.until(ExpectedConditions.visibilityOf(itDepartmentJobsPage.listOfJobs.get(0)));
-        BrowserUtilities.sleep(30);
+        //Write code here that turns the phrase above into concrete actions
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.visibilityOf(itDepartmentJobsPage.listOfJobs.get(0)));
+        //BrowserUtilities.sleep(30);
         System.out.println(itDepartmentJobsPage.listOfJobs.size());
         itDepartmentJobsPage.listOfJobs.get(0).click();
 

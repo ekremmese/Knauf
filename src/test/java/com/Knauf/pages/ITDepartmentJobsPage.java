@@ -1,6 +1,6 @@
 package com.Knauf.pages;
 
-import com.Knauf.utilitites.Driver;
+import com.Knauf.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;

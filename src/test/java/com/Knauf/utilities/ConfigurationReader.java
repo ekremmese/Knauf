@@ -1,4 +1,4 @@
-package com.Knauf.utilitites;
+package com.Knauf.utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;
